@@ -13,7 +13,7 @@ The paper investigates two translation tasks:
 - T1WI → FLAIR
 - T2WI → FLAIR
 
-It reports paired DICOM data, U-Net-based models, and PSNR, MAE, and MSE evaluation. See [the paper study summary](docs/PAPER_STUDY.md) for the reported dataset, preprocessing, model dropout settings, experiment design, and experiment design.
+It reports paired DICOM data, U-Net-based models, and PSNR, MAE, and MSE evaluation. See [the paper study summary](docs/PAPER_STUDY.md) for the reported dataset, preprocessing, model dropout settings, and experiment design.
 
 **Important distinction:** the notebook in this repository implements only the T1WI → FLAIR workflow and contains five notebook-specific model configurations. It does not reproduce all eight experiment cases described in the paper.
 
@@ -38,7 +38,7 @@ Input shape: `(512, 512, 1)`. Encoder widths: 32, 64, 128, and 256 channels; bot
 | 4 | ReLU | 0.20 | 150 | 4 | Yes |
 | 5 | ReLU | 0.30 | 50 | 4 | Yes |
 
-Variants 2–5 monitor training `loss` with patience 5. The split uses `random_state=2).
+Variants 2–5 monitor training `loss` with patience 5. The split uses `random_state=2`.
 
 ## Data and privacy
 
@@ -76,8 +76,8 @@ Do not silently change these details and report the result as the original exper
 - [Paper study: methods, dataset, and experiment design](docs/PAPER_STUDY.md)
 - [Notebook methodology and implementation caveats](docs/METHODOLOGY.md)
 - [Notebook experiment configurations and reporting template](docs/EXPERIMENTS.md)
-- [Model architecture](docs/MODEL_ARCHITECTURE.md)
-- [Results reporting template](results/RESULTS_TEMPLATE.md)
+- [Notebook model architecture](docs/MODEL_ARCHITECTURE.md)
+- [Proposed U-Net architecture diagram](docs/images/proposed_unet_architecture.svg)
 
 ## Notebook file
 
