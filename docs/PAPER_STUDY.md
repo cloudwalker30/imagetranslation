@@ -31,7 +31,7 @@ The paper describes brain MRI data supplied by Horizon Imaging Centre:
 - The paper then reports removing the last four slices per subject as unsuitable, plus two subjects and three slices due to blur/unclear image quality.
 - After cleaning, the paper reports 685 slices per modality. It also evaluates a 342-slice dataset (described as 50% of the full dataset).
 
-The paper's text contains an apparent typo in its list of paired datasets, repeating T1WI for the fourth item. Its experiment descriptions and result tables indicate the intended four pairings are T1WI–FLAIR and T2WI–FLAIR, each at 342 and 685 slices.
+The paper's text contains an apparent typo in its list of paired datasets, repeating T1WI for the fourth item. Its experiment descriptions indicate the intended four pairings are T1WI–FLAIR and T2WI–FLAIR, each at 342 and 685 slices.
 
 The source data are not included in this repository. Do not upload patient DICOM files or identifiable medical images.
 
@@ -73,28 +73,6 @@ Each translation direction is evaluated with the 685-slice dataset and the 342-s
 
 The evaluation uses unseen test images. The paper reports PSNR, MAE, and MSE between generated FLAIR images and ground-truth FLAIR images.
 
-## Results reported in the paper
-
-### T1WI → FLAIR
-
-| Dataset | Model | PSNR (dB) | MAE | MSE |
-|---|---|---:|---:|---:|
-| 342 slices | Proposed U-Net | 22.444 | 0.032 | 0.005 |
-| 342 slices | U-Net from [21] | 20.731 | 0.038 | 0.008 |
-| 685 slices | Proposed U-Net | 22.577 | 0.035 | 0.005 |
-| 685 slices | U-Net from [21] | 21.960 | 0.038 | 0.006 |
-
-### T2WI → FLAIR
-
-| Dataset | Model | PSNR (dB) | MAE | MSE |
-|---|---|---:|---:|---:|
-| 342 slices | Proposed U-Net | 25.3080 | 0.0180 | 0.0020 |
-| 342 slices | U-Net from [21] | 25.2670 | 0.0200 | 0.0030 |
-| 685 slices | Proposed U-Net | 26.3570 | 0.0140 | 0.0020 |
-| 685 slices | U-Net from [21] | 26.2710 | 0.0150 | 0.0020 |
-
-These values are transcribed from Tables II and III of the paper. They are paper-reported results, not outputs reproduced by the notebook in this repository. The paper reports higher PSNR and lower MAE/MSE for its proposed U-Net than for the comparison model in these tables. T2WI-to-FLAIR has higher reported PSNR and lower reported errors than T1WI-to-FLAIR in the corresponding proposed-model results.
-
 ## Relationship to the repository notebook
 
 The included notebook is a separate implementation record and should not be assumed to reproduce the paper's complete methodology or tables:
@@ -107,7 +85,7 @@ The included notebook is a separate implementation record and should not be assu
 | Image canvas | 256 × 256 (T1WI pairs), 480 × 480 (T2WI pairs) | 512 × 512 |
 | Model comparison | Proposed U-Net and U-Net from [21] | Five configurations of the notebook's U-Net |
 | Regularization | Paper reports dropout-rate changes | Do not assume the notebook matches the paper's dropout schedule |
-| Reported metrics | PSNR, MAE, MSE on test data | MSE, MAE, PSNR on validation predictions |
+| Evaluation metrics | PSNR, MAE, MSE on test data | MSE, MAE, PSNR on validation predictions |
 
 For exact notebook implementation details and known limitations, see [Methodology](METHODOLOGY.md) and [Experiment Configurations](EXPERIMENTS.md). Do not label the paper's tables as notebook results.
 
@@ -117,7 +95,7 @@ For exact notebook implementation details and known limitations, see [Methodolog
 - The paper's 80/10/10 split is described, but the text does not clearly establish whether separation was performed at the subject level. A patient-level split should be explicitly documented to avoid leakage across slices from the same subject.
 - The paper's reported metrics are aggregate table values; per-subject distributions, confidence intervals, and external-site validation are not provided in these tables.
 - The reported results do not by themselves establish diagnostic equivalence, clinical safety, or readiness for clinical deployment.
-- Some dataset-cleaning counts and the fourth pairing in the dataset list are worded ambiguously in the paper; this summary preserves the reported 685/342 totals and clarifies the apparent pairing typo using the experiment descriptions and result tables.
+- Some dataset-cleaning counts and the fourth pairing in the dataset list are worded ambiguously in the paper; this summary preserves the reported 685/342 totals and clarifies the apparent pairing typo using the experiment descriptions.
 
 ## Future direction stated by the authors
 
