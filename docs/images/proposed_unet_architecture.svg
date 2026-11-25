@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="980" viewBox="0 0 1800 980" role="img" aria-labelledby="title desc">
+<title id="title">Proposed U-Net architecture for MRI-to-FLAIR translation</title>
+<desc id="desc">Conceptual U-Net encoder bottleneck decoder with skip connections and the nine proposed dropout rates reported in the paper.</desc>
+<defs>
+  <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#52657a"/></marker>
+  <marker id="skip" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#0f766e"/></marker>
+  <linearGradient id="enc" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#dbeafe"/><stop offset="1" stop-color="#bfdbfe"/></linearGradient>
+  <linearGradient id="dec" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#dcfce7"/><stop offset="1" stop-color="#bbf7d0"/></linearGradient>
+  <style>
+    .heading{font:700 34px Arial,sans-serif;fill:#172b4d}
+    .sub{font:20px Arial,sans-serif;fill:#475569}
+    .block{stroke:#45627d;stroke-width:2.5;rx:18}
+    .name{font:700 23px Arial,sans-serif;fill:#16324f;text-anchor:middle}
+    .detail{font:18px Arial,sans-serif;fill:#334155;text-anchor:middle}
+    .rate{font:700 19px Arial,sans-serif;fill:#7c2d12;text-anchor:middle}
+    .arrow{stroke:#52657a;stroke-width:4;fill:none;marker-end:url(#arrow)}
+    .skipline{stroke:#0f766e;stroke-width:3.5;stroke-dasharray:10 8;fill:none;marker-end:url(#skip)}
+    .small{font:18px Arial,sans-serif;fill:#475569}
+    .tag{font:700 18px Arial,sans-serif;fill:#0f766e}
+  </style>
+</defs>
+<rect width="1800" height="980" fill="#ffffff"/>
+<text x="900" y="62" text-anchor="middle" class="heading">Proposed U-Net for MRI-to-FLAIR Translation</text>
+<text x="900" y="100" text-anchor="middle" class="sub">Conceptual encoder–decoder schematic • dropout values follow the paper’s reported block order</text>
+
+<!-- Input and output -->
+<rect x="35" y="390" width="115" height="100" rx="14" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+<text x="92" y="430" class="name">Input</text><text x="92" y="460" class="detail">T1WI / T2WI</text>
+<path class="arrow" d="M150 440 L190 440"/>
+
+<!-- Encoder blocks -->
+<rect class="block" x="200" y="155" width="170" height="105" fill="url(#enc)"/>
+<text class="name" x="285" y="190">Encoder 1</text><text class="detail" x="285" y="220">Conv + downsample</text><text class="rate" x="285" y="246">Dropout 0.1</text>
+<rect class="block" x="395" y="275" width="170" height="105" fill="url(#enc)"/>
+<text class="name" x="480" y="310">Encoder 2</text><text class="detail" x="480" y="340">Conv + downsample</text><text class="rate" x="480" y="366">Dropout 0.1</text>
+<rect class="block" x="590" y="395" width="170" height="105" fill="url(#enc)"/>
+<text class="name" x="675" y="430">Encoder 3</text><text class="detail" x="675" y="460">Conv + downsample</text><text class="rate" x="675" y="486">Dropout 0.3</text>
+<rect class="block" x="785" y="515" width="170" height="105" fill="url(#enc)"/>
+<text class="name" x="870" y="550">Encoder 4</text><text class="detail" x="870" y="580">Conv + downsample</text><text class="rate" x="870" y="606">Dropout 0.3</text>
+
+<!-- Bottleneck -->
+<rect class="block" x="980" y="650" width="180" height="115" fill="#fef3c7" stroke="#b7791f"/>
+<text class="name" x="1070" y="690">Bottleneck</text><text class="detail" x="1070" y="722">Deep features</text><text class="rate" x="1070" y="750">Dropout 0.5</text>
+
+<!-- Decoder -->
+<rect class="block" x="1185" y="515" width="170" height="105" fill="url(#dec)" stroke="#3f8062"/>
+<text class="name" x="1270" y="550">Decoder 4</text><text class="detail" x="1270" y="580">Up-conv + concat</text><text class="rate" x="1270" y="606">Dropout 0.3</text>
+<rect class="block" x="1380" y="395" width="170" height="105" fill="url(#dec)" stroke="#3f8062"/>
+<text class="name" x="1465" y="430">Decoder 3</text><text class="detail" x="1465" y="460">Up-conv + concat</text><text class="rate" x="1465" y="486">Dropout 0.3</text>
+<rect class="block" x="1380" y="275" width="170" height="105" fill="url(#dec)" stroke="#3f8062"/>
+<text class="name" x="1465" y="310">Decoder 2</text><text class="detail" x="1465" y="340">Up-conv + concat</text><text class="rate" x="1465" y="366">Dropout 0.1</text>
+<rect class="block" x="1380" y="155" width="170" height="105" fill="url(#dec)" stroke="#3f8062"/>
+<text class="name" x="1465" y="190">Decoder 1</text><text class="detail" x="1465" y="220">Up-conv + concat</text><text class="rate" x="1465" y="246">Dropout 0.1</text>
+
+<!-- Main path -->
+<path class="arrow" d="M370 207 L395 327"/>
+<path class="arrow" d="M565 327 L590 447"/>
+<path class="arrow" d="M760 447 L785 567"/>
+<path class="arrow" d="M955 567 L980 707"/>
+<path class="arrow" d="M1160 707 L1185 567"/>
+<path class="arrow" d="M1355 567 L1380 447"/>
+<path class="arrow" d="M1465 395 L1465 380"/>
+<path class="arrow" d="M1465 275 L1465 260"/>
+
+<!-- Skip connections -->
+<path class="skipline" d="M285 155 C285 125 1465 125 1465 155"/>
+<path class="skipline" d="M480 275 C480 245 1465 245 1465 275"/>
+<path class="skipline" d="M675 395 C675 365 1465 365 1465 395"/>
+<path class="skipline" d="M870 515 C870 485 1270 485 1270 515"/>
+<text x="895" y="145" class="tag" text-anchor="middle">Skip connections (feature concatenation)</text>
+
+<!-- Output -->
+<path class="arrow" d="M1550 207 L1600 207"/>
+<rect x="1605" y="155" width="160" height="105" rx="18" fill="#f1f5f9" stroke="#64748b" stroke-width="2.5"/>
+<text class="name" x="1685" y="190">Output</text><text class="detail" x="1685" y="220">Generated FLAIR</text>
+
+<!-- Legend / caveat -->
+<rect x="200" y="825" width="1400" height="92" rx="16" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+<text x="230" y="862" class="small">Blue: encoder / downsampling</text>
+<text x="590" y="862" class="small">Amber: bottleneck</text>
+<text x="850" y="862" class="small">Green: decoder / upsampling</text>
+<text x="230" y="895" class="small">Schematic only: the paper reports the dropout schedule and U-Net connections; exact layer widths and tensor dimensions are not specified here.</text>
+</svg>
