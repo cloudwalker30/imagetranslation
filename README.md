@@ -65,3 +65,7 @@ Do not silently change these details and report the result as the original exper
 Metrics are MSE, MAE, and PSNR (peak intensity 1.0). Record actual results, subject/slice counts, split protocol, software versions, hardware, and limitations. Do not publish illustrative or unverified metric values as results.
 
 No author, institution, supervisor, publication, DOI, or license details were supplied. Add accurate attribution and an approved license after checking code ownership and institutional terms.
+
+## Notebook
+
+The notebook is stored as a gzip-compressed Jupyter file at [`notebooks/T1toFlairUnet40slice.ipynb.gz`](notebooks/T1toFlairUnet40slice.ipynb.gz) to keep the repository upload compact. Download it and decompress it to `T1toFlairUnet40slice.ipynb` before opening in Jupyter. Notebook code and markdown are preserved; saved cell outputs and execution counts were cleared to avoid publishing embedded MRI previews and stale run output.
