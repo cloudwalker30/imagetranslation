@@ -13,9 +13,9 @@ The paper investigates two translation tasks:
 - T1WI → FLAIR
 - T2WI → FLAIR
 
-It reports paired DICOM data, U-Net-based models, and PSNR, MAE, and MSE evaluation. See [the paper study summary](docs/PAPER_STUDY.md) for the reported dataset, preprocessing, model dropout settings, experiment design, and published result tables.
+It reports paired DICOM data, U-Net-based models, and PSNR, MAE, and MSE evaluation. See [the paper study summary](docs/PAPER_STUDY.md) for the reported dataset, preprocessing, model dropout settings, experiment design, and experiment design.
 
-**Important distinction:** the notebook in this repository implements only the T1WI → FLAIR workflow and contains five notebook-specific model configurations. It does not reproduce all eight experiment cases or the paper's reported test results. The paper results documented here are transcribed from the publication, not independently reproduced.
+**Important distinction:** the notebook in this repository implements only the T1WI → FLAIR workflow and contains five notebook-specific model configurations. It does not reproduce all eight experiment cases described in the paper.
 
 ## Project contents
 
@@ -73,7 +73,7 @@ Do not silently change these details and report the result as the original exper
 
 ## Documentation
 
-- [Paper study: methods, dataset, and published results](docs/PAPER_STUDY.md)
+- [Paper study: methods, dataset, and experiment design](docs/PAPER_STUDY.md)
 - [Notebook methodology and implementation caveats](docs/METHODOLOGY.md)
 - [Notebook experiment configurations and reporting template](docs/EXPERIMENTS.md)
 - [Model architecture](docs/MODEL_ARCHITECTURE.md)
