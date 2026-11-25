@@ -1,0 +1,13 @@
+# Dependencies used by the supplied notebook; exact versions were not recorded.
+jupyter
+numpy
+matplotlib
+pydicom
+pylibjpeg
+opencv-python
+tensorflow
+keras
+scikit-learn
+scipy
+imageio
+scikit-image
