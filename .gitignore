@@ -1,0 +1,44 @@
+# Python
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Secrets
+.env
+.env.*
+*.pem
+*.key
+
+# Medical data: keep outside Git
+data/
+dataset/
+datasets/
+*.dcm
+*.dicom
+*.nii
+*.nii.gz
+*.mha
+*.mhd
+
+# Model weights and generated files
+*.h5
+*.hdf5
+*.keras
+*.weights
+checkpoints/
+models/
+outputs/
+predictions/
+logs/
+*.log
