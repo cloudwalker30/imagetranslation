@@ -62,11 +62,6 @@ The paper reports the following dropout rates, in the order used for its convolu
 
 The architecture uses an encoder-decoder structure, with down-sampling in the encoder, transposed-convolution up-sampling in the decoder, and skip connections that concatenate corresponding encoder and decoder feature maps. The paper describes ReLU in intermediate layers and a sigmoid output in its general U-Net description. Consult the paper's architecture figures and implementation before reproducing layer-by-layer details.
 
-### Proposed model architecture diagram
-
-![Proposed U-Net architecture with the paper-reported dropout schedule](images/proposed_unet_architecture.svg)
-
-The diagram is a conceptual summary of the encoder–bottleneck–decoder flow and the nine dropout values in the order reported by the paper. It is not a layer-by-layer reproduction: exact filter widths, tensor dimensions, and every operation should be checked against the original paper figure or implementation.
 
 ## Experiment design
 
