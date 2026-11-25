@@ -77,7 +77,6 @@ Do not silently change these details and report the result as the original exper
 - [Notebook methodology and implementation caveats](docs/METHODOLOGY.md)
 - [Notebook experiment configurations and reporting template](docs/EXPERIMENTS.md)
 - [Notebook model architecture](docs/MODEL_ARCHITECTURE.md)
-- [Proposed U-Net architecture diagram](docs/images/proposed_unet_architecture.svg)
 
 ## Notebook file
 
