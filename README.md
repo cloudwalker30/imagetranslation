@@ -87,4 +87,4 @@ The notebook is stored as a gzip-compressed Jupyter file at [`notebooks/T1toFlai
 
 Patel, P., Kamboj, P., & Nanavati, N. (2026). “Inter-modality MRI Image Translation using Deep Learning.” *Grenze International Journal of Engineering and Technology*, January issue, 1281–1295.
 
-The source PDF is not included. Confirm publication and redistribution rights before adding the full paper or figures.
+
